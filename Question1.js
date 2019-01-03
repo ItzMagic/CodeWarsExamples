@@ -17,14 +17,19 @@
 
 
 
-const Series = [1, 1/4 , 1/7, 1/10, 1/13, 1/16, 1/19, 1/22, 1/25, 1/28]
-
-SeriesSum =()=> { 
-Sum = Series.reduce((accumulator, currentValue)=> {
-console.log(accumulator.toFixed(2))
-return accumulator + currentValue;
-})
-return Sum;
-;}
-
-SeriesSum()
+SeriesSum = ( number ) => {
+    let result = 0;
+    let b = 1;
+    
+    for ( let i = 0; i < number; i += 1 ) {
+      if ( i === 0 ) {
+      result = 1; 
+      } else if( number === 0 ) {
+        result === 0;
+        } else {
+            b += 3; 
+            result = result + ( 1/ b );
+           }
+     }
+    return result.toFixed( 2 );
+  };
