@@ -14,23 +14,26 @@ list([ {name: 'Bart'} ])
 // returns 'Bart'
 
 list([])
-// returns '' */ 
+// returns '' */
+var list = [{name:'bart'}, {name:'Lux'}, {name:'Master Chief'}, {name:'Link'}]
 
 
+// const newArray = names.map((_, i )=>{
+//   if (i < names.legnth){
+//    return _ + ', '
+//   } else if ( i === names.length - 1 ){
+//      return ' & ' + _
+//     }else if (i < names.length){
+//       return _ + `,`
+//       }else {return `something is not working`}
+//   } 
+// );
 
-// Not done 
-var names = ['bart', 'whoa', 'boom', 'awesome']
+list = (names) => {
+  for(i = 0, i < list.length; i++){
+    if (list[i].length === list.length -1){
+      return list[i].name + ', '}
+  }
+}
 
-
-const newArray = names.map((_, i )=>{
-  if (i < names.legnth){
-   return _ + ', '
-  } else if ( i === names.length - 1 ){
-     return ' & ' + _
-    }else if (i < names.length){
-      return _ + `,`
-      }else {return `something is not working`}
-});
-
-
-newArray.toString()
+list()
