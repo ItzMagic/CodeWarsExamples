@@ -29,11 +29,25 @@ var list = [{name:'bart'}, {name:'Lux'}, {name:'Master Chief'}, {name:'Link'}]
 //   } 
 // );
 
-list = (names) => {
-  for(i = 0, i < list.length; i++){
-    if (list[i].length === list.length -1){
-      return list[i].name + ', '}
+const thingThatDoesStuff = ( stuff ) => {
+  let newArray = [];
+  if (stuff.length === 1){
+    return list[0].name
   }
+  if(stuff.length === 2){
+    return list[0].name + ' & ' + list[1].name
+  }
+  for(i = 0; i < stuff.length ; i++) {
+    if(i === stuff.length-1){
+      console.log( list[i].name )
+      console.log( newArray )
+      newArray.push(` & `+ list[i].name)
+    }else{
+      newArray.push(list[i].name + ', ');
+    }
+      console.log(newArray)    
+  }
+  
+  return newArray.join('')
 }
-
-list()
+thingThatDoesStuff(list)
