@@ -29,25 +29,31 @@ var list = [{name:'bart'}, {name:'Lux'}, {name:'Master Chief'}, {name:'Link'}]
 //   } 
 // );
 
-const thingThatDoesStuff = ( stuff ) => {
+
+// Example below passed all the tests now to learn what other apporoaches could of been used
+//in order to get the same result 
+
+
+const thingThatDoesStuff = ( list ) => {
   let newArray = [];
-  if (stuff.length === 1){
+  if (list.length === 1){
     return list[0].name
   }
-  if(stuff.length === 2){
+  if(list.length === 2){
     return list[0].name + ' & ' + list[1].name
   }
-  for(i = 0; i < stuff.length ; i++) {
-    if(i === stuff.length-1){
-      console.log( list[i].name )
-      console.log( newArray )
+  for(i = 0; i < list.length ; i++) {
+    if(i === list.length-1){
+      // console.log( list[i].name )
+      // console.log( newArray )
       newArray.push(` & `+ list[i].name)
-    }else{
-      newArray.push(list[i].name + ', ');
-    }
-      console.log(newArray)    
+      } else if(i === list.length -2){
+          newArray.push(list[i].name);
+        } else{
+            newArray.push(list[i].name + ', ');
+          }
+      // console.log(newArray)    
   }
-  
   return newArray.join('')
 }
 thingThatDoesStuff(list)
